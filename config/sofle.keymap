@@ -32,11 +32,13 @@
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <13 14 15 13>;
+            layers = <0>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <25 26 27>;
+            layers = <0>;
         };
     };
 

@@ -47,6 +47,7 @@
             bindings = <&kp AT_SIGN>;
             key-positions = <26 14>;
             layers = <0>;
+            require-prior-idle-ms = <50>;
         };
 
         grave {
@@ -299,7 +300,7 @@
 &none  &none  &none         &kp FSLH      &kp ASTERISK  &kp MINUS                      &none          &none     &none         &none      &none          &none
 &none  &none  &kp N7        &kp N8        &kp N9        &kp PLUS                       &kp PAGE_UP    &none     &kp UP_ARROW  &none      &none          &none
 &none  &none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp BACKSPACE                  &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT  &kp BACKSPACE  &kp DELETE
-&none  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none          &none    &none  &none          &none     &none         &none      &none          &none
+&none  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none          &none    &none  &kp INS        &kp TAB   &none         &none      &none          &none
               &kp N0        &kp PERIOD    &kp ENTER     &none          &none    &none  &none          &none     &none         &none
             >;
 
@@ -314,7 +315,7 @@
 &none          &none       &none     &none         &none      &none                          &none  &none         &kp SLASH     &kp ASTERISK  &kp MINUS      &none
 &none          &none       &none     &kp UP_ARROW  &none      &kp PAGE_UP                    &none  &kp N7        &kp N8        &kp N9        &kp PLUS       &none
 &kp BACKSPACE  &kp DELETE  &kp LEFT  &kp DOWN      &kp RIGHT  &kp PAGE_DOWN                  &none  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp BACKSPACE  &none
-&none          &none       &none     &none         &none      &none          &none    &none  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none          &none
+&none          &none       &none     &none         &kp TAB    &kp INS        &none    &none  &none  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none          &none
                            &none     &none         &none      &none          &none    &none  &none  &kp N0        &kp PERIOD    &kp ENTER
             >;
 
@@ -333,11 +334,11 @@
 
             display-name = "System";
             bindings = <
-&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none  &none  &none  &none  &none  &none
-&ext_power EP_TOG  &none         &none         &none         &none         &studio_unlock                  &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &none                           &none  &none  &none  &none  &none  &none
-&none              &none         &none         &none         &none         &caps_word      &none    &none  &none  &none  &none  &none  &none  &none
-                                 &none         &none         &none         &none           &none    &none  &none  &none  &none  &none
+&bt BT_CLR_ALL     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &none            &none                    &none          &none        &none  &none
+&ext_power EP_TOG  &kp F12       &kp F7        &kp F8        &kp F9        &studio_unlock                  &none            &kp LS(LC(KP_NUMBER_4))  &none          &none        &none  &none
+&none              &kp F11       &kp F4        &kp F5        &kp F6        &none                           &kp LC(LS(TAB))  &kp LC(LEFT_ARROW)       &kp LC(RIGHT)  &kp LC(TAB)  &none  &none
+&none              &kp F10       &kp F1        &kp F2        &kp F3        &caps_word      &none    &none  &kp LG(LS(T))    &kp LG(LS(TAB))          &kp LG(TAB)    &kp LG(T)    &none  &none
+                                 &none         &none         &none         &none           &none    &none  &none            &none                    &none          &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

@@ -217,6 +217,13 @@
             require-prior-idle-ms = <50>;
             layers = <0>;
         };
+
+        all {
+            bindings = <&kp LG(A)>;
+            key-positions = <40 41>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
     };
 
     behaviors {

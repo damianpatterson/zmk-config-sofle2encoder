@@ -118,6 +118,104 @@
             require-prior-idle-ms = <50>;
             layers = <0>;
         };
+
+        underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <30 44>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <30 18>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        plus {
+            bindings = <&kp PLUS>;
+            key-positions = <19 31>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <31 45>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <45 46>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        lpar_lt {
+            bindings = <&lpar_lt>;
+            key-positions = <31 32>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        bspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <19 20>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        asterisk {
+            bindings = <&kp ASTRK>;
+            key-positions = <20 32>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        slash {
+            bindings = <&kp SLASH>;
+            key-positions = <32 46>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        rbracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <46 47>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        rpar_gt {
+            bindings = <&rpar_gt>;
+            key-positions = <32 33>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <20 21>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        amp {
+            bindings = <&kp AMPERSAND>;
+            key-positions = <21 33>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <33 47>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -139,6 +237,24 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <180>;
             flavor = "balanced";
+        };
+
+        lpar_lt: lpar_lt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPAR_LT";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        rpar_gt: rpar_gt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RPAR_GT";
+            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 

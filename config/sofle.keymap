@@ -90,6 +90,34 @@
             require-prior-idle-ms = <50>;
             layers = <0>;
         };
+
+        dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <16 28>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        equal {
+            bindings = <&kp PERCENT>;
+            key-positions = <40 28>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        percent {
+            bindings = <&kp PERCENT>;
+            key-positions = <29 17>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <29 41>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
     };
 
     behaviors {

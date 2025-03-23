@@ -45,13 +45,13 @@
 
         at {
             bindings = <&kp AT_SIGN>;
-            key-positions = <13 25>;
+            key-positions = <26 14>;
             layers = <0>;
         };
 
         grave {
             bindings = <&kp GRAVE>;
-            key-positions = <25 37>;
+            key-positions = <38 26>;
             require-prior-idle-ms = <50>;
             layers = <0>;
         };

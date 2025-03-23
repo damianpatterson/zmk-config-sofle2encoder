@@ -83,6 +83,13 @@
             require-prior-idle-ms = <50>;
             layers = <0>;
         };
+
+        hash {
+            bindings = <&kp HASH>;
+            key-positions = <27 15>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
     };
 
     behaviors {

@@ -100,7 +100,7 @@
         };
 
         equal {
-            bindings = <&kp PERCENT>;
+            bindings = <&kp EQUAL>;
             key-positions = <40 28>;
             require-prior-idle-ms = <50>;
             layers = <0>;

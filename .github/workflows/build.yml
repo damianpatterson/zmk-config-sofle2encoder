@@ -28,7 +28,7 @@ jobs:
           west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG=config -DSHIELD="sofle_left nice_view_adapter nice_view"
 
       - name: Upload Firmware Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: firmware
           path: build/zephyr/zmk.uf2

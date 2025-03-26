@@ -13,22 +13,24 @@ jobs:
     container:
       image: zmkfirmware/zmk-build-arm:stable
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4.1.1
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Initialize West and Update Modules
+      - name: Build firmware
         run: |
           west init -l config
           west update
-          west zephyr-export
-          pip3 install --user -r zmk/zephyr/scripts/requirements.txt
-
-      - name: Build Firmware
-        run: |
           west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG=config -DSHIELD="sofle_left nice_view_adapter nice_view"
 
-      - name: Upload Firmware Artifacts
-        uses: actions/upload-artifact@v3.1.2
+  upload:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
         with:
           name: firmware
           path: build/zephyr/zmk.uf2

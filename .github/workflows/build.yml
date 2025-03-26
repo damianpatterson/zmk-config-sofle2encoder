@@ -14,7 +14,7 @@ jobs:
       image: zmkfirmware/zmk-build-arm:stable
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1
 
       - name: Initialize West and Update Modules
         run: |

@@ -1,36 +1,5 @@
-# on: [push, pull_request, workflow_dispatch]
-
-# jobs:
-#   build:
-#     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 on: [push, pull_request, workflow_dispatch]
-
-name: Build Firmware
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: zmkfirmware/zmk-build-arm:stable
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Build firmware
-        run: |
-          west init -l config
-          west update
-          west build -s zmk/app -b nice_nano_v2 -- -DZMK_CONFIG=config -DSHIELD="sofle_left nice_view_adapter nice_view"
-
-  upload:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: firmware
-          path: build/zephyr/zmk.uf2
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
